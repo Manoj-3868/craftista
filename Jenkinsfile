@@ -41,7 +41,7 @@ pipeline {
             }
           
           }
-           when {branch:'main'}
+           when {branch 'main'}
           steps {
             dir(path: 'voting') {
               sh 'mvn package -DskipTests'
@@ -53,7 +53,7 @@ pipeline {
 
         stage('Docker B&P') {
           agent any
-          when {branch:'main'}
+          when {branch 'main'}
           steps {
             script {
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
