@@ -107,6 +107,7 @@ npm test'''
     }
 
     stage('frontend B&P') {
+      agent any
       steps {
         dir(path: 'frontend') {
           script {
