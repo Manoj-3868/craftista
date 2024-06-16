@@ -113,7 +113,7 @@ npm test'''
           script {
             docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
               def commitHash = env.GIT_COMMIT.take(7)
-              def dockerImage = docker.build("manoj3868/craftista-frontend:${commitHash}", "./frontend")
+              def dockerImage = docker.build("manoj3868/craftista-frontend:${commitHash}", "./")
               dockerImage.push()
               dockerImage.push("latest")
               dockerImage.push("dev")
